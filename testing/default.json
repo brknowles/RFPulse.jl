@@ -1,0 +1,27 @@
+{
+	"SystemParameters" : {
+		"Gamma" : 43.0e3,
+		"MaxB1" : 50.0,
+		"MaxGrad" : 24.0,
+		"MaxSlew" : 200.0,
+		"B0" : 6.98
+	},
+	"PulseParameters" : {
+		"Samples" : 128,
+		"Duration" : 10e-3,
+		"Type" : "HyperbolicSecant", 
+		"SliceThickness" : 5.00,
+		"Bandwidth" : 100.00,
+		"HyperbolicSecantParameters" : {
+			"Beta" : 525.0,
+			"Mu" : 3.0
+		},
+		"FOCIParameters" : {},
+		"VERSEParameters" : {}
+	},
+	"RFShape" : {
+		"Real" : {},
+		"Imag" : {},
+		"Grad" : {}
+	}
+}
