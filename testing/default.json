@@ -1,27 +1,50 @@
 {
+	"_units" : "(unless stated otherwise) B => mT; Freq => Hz; time => s, x => m, G==>mT/m, S=> mT/m/s, gamma = Hz/mT",
+	"_todo1" : "Fix units",
+	"_comment1" : "Example config file for a HS pulse + simulation parameters", 
+	"Version" : 0.1,
+	"PulseType" : "HyperbolicSecant", 
+	"_comment2" : "Parameters relating to the Hardware",
 	"SystemParameters" : {
-		"Gamma" : 43.0e3,
-		"MaxB1" : 50.0,
+		"Gamma" : 42570.0,
+		"MaxB1" : 14.0e-3,
 		"MaxGrad" : 24.0,
 		"MaxSlew" : 200.0,
-		"B0" : 6.98
+		"B0" : 6.98e3
 	},
+	"_comment3" : "Parameters relating to the RF pulse design",
 	"PulseParameters" : {
 		"Samples" : 128,
-		"Duration" : 10e-3,
-		"Type" : "HyperbolicSecant", 
-		"SliceThickness" : 5.00,
-		"Bandwidth" : 100.00,
+		"Duration" : 8e-3,
+		"SliceThickness" : 3.0e-3,
+		"Bandwidth" : 0.0,
 		"HyperbolicSecantParameters" : {
-			"Beta" : 525.0,
-			"Mu" : 3.0
+			"_hs_units" : "Beta => rad/s; Mu => dimensionless",
+			"Beta" : 800.0,
+			"Mu" : 4.9
 		},
 		"FOCIParameters" : {},
 		"VERSEParameters" : {}
 	},
-	"RFShape" : {
-		"Real" : {},
-		"Imag" : {},
-		"Grad" : {}
-	}
+	"_comment4" : "Parameters relating to the Bloch Simulations",
+	"SimulationParameters" : {
+	  "_todo2" : "Freq. Range is a dummy argument that must be fixed",
+	  "PositionSamples" : 1024,
+	  "FrequencySamples" : 1,
+	  "T1" : 10000.0,
+	  "T2" : 10000.0,
+	  "FrequencyRange" : 0.0,
+	  "PositionRange"  : 30.0e-3,
+	  "Output" : {
+	    "Mx" : {},
+	    "My" : {},
+	    "Mz" : {},
+	    "X"  : {},
+	    "F"  : {}
+	  }
+	},
+	"_comment5" : "RF Pulse/ gradient / time vectors",
+	"RFShape"   : {},
+	"GradShape" : {},
+	"Time"      : {}
 }
